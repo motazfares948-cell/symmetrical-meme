@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>جرب </title>
+  <meta charset="utf-8">
+  <title></title>
   <style>
-    body {
-      background-color: rgb(0, 0, 0);
-      font-family: Arial, sans-serif;
-      display: flex;             /* يجعل الصفحة مرنة */
-      flex-direction: column;    /* ترتيب العناصر عمودي */
-      justify-content: center;   /* مركزيًا عمودي */
-      align-items: center;       /* مركزيًا أفقي */
-      height: 100vh;             /* ارتفاع الصفحة كامل */
-      margin: 0;
-      text-align: center;         /* نص مركزي */
+    body{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      margin:0;
+      background:#111;
+      color:#fff;
+      font-family:Arial, sans-serif;
+      text-align:center;
     }
-    h1 {
-      color: rgb(252, 252, 252);
-      font-size: 40px;           /* حجم أكبر للنص */
-      margin: 0;
+    img{ max-width:320px; border:4px solid #e33; border-radius:8px; }
+    h1{ font-size:28px; margin:18px 0 8px; }
+    p{ color:#ddd; margin:0 0 18px; }
+    .reveal{
+      margin-top:14px;
+      background:#2b9; color:#012; border:none;
+      padding:10px 18px; border-radius:8px; cursor:pointer; font-size:16px;
     }
-    p {
-      color: rgb(83, 73, 73);
-      font-size: 20px;
-      margin: 10px 0 30px 0;     /* مسافة فوق وتحت */
-    }
-    button {
-      background-color: green;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 8px;
-      border: none;
-      font-size: 18px;
-      cursor: pointer;           /* يظهر أيقونة يد عند المرور */
-    }
+    .note{ font-size:14px; color:#f5d; margin-top:12px; }
   </style>
 </head>
 <body>
 
-  <h1>مرحباً 👋</h1>
-  <p>لا تخاف</p>
-  <button onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">
-    إضغط هنا
-  </button>
+  <!-- صورة درامية أو شعار -->
+  <img src="https://i.imgur.com/3sK0XjT.png" alt="تحذير" />
+
+  <h1>تحذير: نشاط غير معتاد</h1>
+  <p>تم اكتشاف دخول غير مصرح — الرجاء البقاء هادئًا.</p>
+
+  <!-- زر يكشف أنه مجرد مزحة ويوجه المستخدم -->
+  <button class="reveal" onclick="reveal()">اضغط للمتابعة</button>
+
+  <p class="note" id="note"></p>
+
+  <script>
+    function reveal(){
+      // استبدل الرابط أدناه بالرابط الذي تريد توجيه الأصدقاء إليه
+      const target = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+      document.getElementById('note').textContent = 'نقصر برك متخافش😄';
+      // فتح الرابط في لسان جديد بعد كشف المقلب
+      window.open(target, '_blank');
+    }
+  </script>
 
 </body>
 </html>
